@@ -22,7 +22,7 @@ export default class MovieForm extends React.Component {
 	render() {
 
 		console.log(this.state);
-		const { onClose } = this.props;
+		const { onSave, onClose } = this.props;
 
 		return(
 			<div className="MovieFormWrapper">
@@ -33,7 +33,7 @@ export default class MovieForm extends React.Component {
 					<label className="MovieForm__label">Description
 						<textarea className="MovieForm__textarea" rows="8" value={this.state.descr} onChange={this.inputHandler}></textarea>
 					</label>
-					<button className="MovieForm__btn MovieForm__btn--save">save</button>
+					<button className="MovieForm__btn MovieForm__btn--save" onClick={onSave}>save</button>
 					<button className="MovieForm__btn MovieForm__btn--cancel" onClick={onClose}>cancel</button>
 				</form>
 			</div>
