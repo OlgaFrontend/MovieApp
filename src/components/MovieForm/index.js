@@ -10,15 +10,16 @@ export default class MovieForm extends React.Component {
 			descr: props.movie.descr,
 			id: props.movie.id
 		}
+
+		this.inputHandler = this.inputHandler.bind(this);
 	}
 
 	inputHandler =(e) => {
 		console.log(e.target.name);
-    const name = e.target.name;
-    const value = e.target.value
-    this.setState({
-       [name]:value })
-  }
+		this.setState({
+			title: e.target.value,
+		})
+	}
 
 	render() {
 		console.log(this.state);
@@ -34,7 +35,7 @@ export default class MovieForm extends React.Component {
 					<label className="MovieForm__label">Description
 						<textarea className="MovieForm__textarea" rows="8" value={this.state.descr} name={descr} onChange={this.inputHandler}></textarea>
 					</label>
-					<button className="MovieForm__btn MovieForm__btn--save" clicked={(e)=>this.props.onSave(e, this.state)}>save</button>
+					<button className="MovieForm__btn MovieForm__btn--save" onClick={onSave}>save</button>
 					<button className="MovieForm__btn MovieForm__btn--cancel" onClick={onClose}>cancel</button>
 				</form>
 			</div>
