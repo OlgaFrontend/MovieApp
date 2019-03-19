@@ -1,0 +1,42 @@
+.Navigation {
+	display: flex;
+	list-style: none;
+}
+
+.Navigation__item {
+	margin-left: 16px;
+}
+
+.Navigation__link {
+	position: relative;
+	display: block;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #424242;
+	font-size: 20px;
+}
+
+.Navigation__link:after {
+    position: absolute;
+    top: 52px;
+    left: 0;
+    content: "";
+    height: 4px;
+    background: #ff5722;
+    border-radius: 10px;
+    transition: width .3s linear;
+}
+
+.Navigation__link:hover {
+	color: #ff5722;
+}
+
+.Navigation__link:hover:after {
+    width: 100%;    
+}
+
+@media (max-width: 425px) {
+	.Navigation__link {
+		font-size: 16px;
+	}
+}

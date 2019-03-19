@@ -1,0 +1,24 @@
+.MovieCard {
+    max-width: 250px;
+    padding: 8px;
+    margin: 20px 10px;
+    color: #424242;
+    box-shadow: 0 0 2px 2px rgba(33,33,33,.5);
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.MovieInfo__title {
+    margin: 0;
+    width: 90%;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    /*white-space: wrap;*/
+}
+
+.MovieInfo__descr {
+    margin-bottom: 20px;
+    line-height: 1.3;
+    letter-spacing: -.2px;
+}
+

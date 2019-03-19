@@ -1,0 +1,18 @@
+.Header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+	border-bottom: 4px solid #3f51b5;
+}
+
+.Header__logo {
+	color: #424242;
+	text-transform: capitalize;
+}
+
+@media (max-width: 425px) {
+	.Header__logo {
+		font-size: 20px;
+	}
+}
