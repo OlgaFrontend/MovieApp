@@ -6,10 +6,10 @@ import './styles.css';
 export default class MovieCard extends React.Component {
 
 	render() {
-		const { id, title, descr, clicked } = this.props;
+		const { idElem, title, descr, clicked } = this.props;
 
 		return(
-			<div className = "MovieCard" onClick={() => clicked(id)}>
+			<div className = "MovieCard" onClick={() => clicked(idElem)}>
 		        <div className = "MovieInfo">
 					<h2 className="MovieInfo__title">{title}</h2>
 			        <p className="MovieInfo__descr">{descr}</p>

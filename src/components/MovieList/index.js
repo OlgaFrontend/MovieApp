@@ -5,18 +5,19 @@ import './styles.css';
 
 export default class MovieList extends React.Component {
 	render() {
-		const moviesList = this.props.movies.map( movie =>
-			<MovieCard
-				key={movie.id}
-				title={movie.title}
-				descr={movie.descr}
-				clicked={this.props.editMovie}
-			/>
-		);
-
 		return(
 			<div className="MovieList" >
-				{moviesList}
+				{
+					this.props.movies.map(movie =>
+						<MovieCard
+							idElem={movie.id}
+							key={movie.id}
+							title={movie.title}
+							descr={movie.descr}
+							clicked={this.props.editMovie}
+						/>
+					)
+				}
 			</div>
 		);
 	}

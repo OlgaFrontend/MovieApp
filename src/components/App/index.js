@@ -23,6 +23,7 @@ export default class App extends React.Component {
 
 	openMovieHandler(id) {
 		console.log(id);
+
     this.setState({
       isOpen:true,
       movieToEdit: id,
@@ -38,21 +39,20 @@ export default class App extends React.Component {
 	updateMovie(e, movie) {
 		e.preventDefault();
     const movies = [...this.state.movies];
-    const movieToUpdate = movies.findIndex(m => m.id === movie.id);
-  	movies[movieToUpdate] = movie;
+    const movieToUpdate = movies.find(m => m.id === movie.id);
     this.setState({movies:movies, isOpen: false});
 	}
 
 	render() {
 		const { isOpen, movieToEdit } = this.state;
-		const editModal = isOpen ? 
+		const findEl = this.state.movies.find(movie => movie.id === this.state.movieToEdit)
+		const EditForm = isOpen &&
 			<MovieForm
 				isOpen={isOpen}
 				onSave={this.updateMovie}
 				onClose={this.closeMovieHandler}
-				movie={this.state.movies.find(movie => movie.id === this.state.movieToEdit)}
+				movie={findEl}
 			/> 
-			: null;
 			
 		return(
 			<div className="AppWrapper">
@@ -63,7 +63,7 @@ export default class App extends React.Component {
 							movies={this.state.movies}
 							editMovie={this.openMovieHandler}
 						/>
-						{editModal}
+						{EditForm}
 					</div>
 				</div>
 			</div>

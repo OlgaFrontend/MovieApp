@@ -6,13 +6,14 @@ export default class MovieForm extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			title: props.title,
-			descr: props.descr,
-			id: props.id
+			title: props.movie.title,
+			descr: props.movie.descr,
+			id: props.movie.id
 		}
 	}
 
 	inputHandler =(e) => {
+		console.log(e.target.name);
     const name = e.target.name;
     const value = e.target.value
     this.setState({
@@ -20,20 +21,20 @@ export default class MovieForm extends React.Component {
   }
 
 	render() {
-
 		console.log(this.state);
 		const { onSave, onClose } = this.props;
+		const { title, descr } = this.state;
 
 		return(
 			<div className="MovieFormWrapper">
 				<form className="MovieForm">
 					<label className="MovieForm__label">Title
-						<input className="MovieForm__input" type="text" value={this.state.title} onChange={this.inputHandler} />
+						<input className="MovieForm__input" type="text" value={this.state.title} name={title} onChange={this.inputHandler} />
 					</label>
 					<label className="MovieForm__label">Description
-						<textarea className="MovieForm__textarea" rows="8" value={this.state.descr} onChange={this.inputHandler}></textarea>
+						<textarea className="MovieForm__textarea" rows="8" value={this.state.descr} name={descr} onChange={this.inputHandler}></textarea>
 					</label>
-					<button className="MovieForm__btn MovieForm__btn--save" onClick={onSave}>save</button>
+					<button className="MovieForm__btn MovieForm__btn--save" clicked={(e)=>this.props.onSave(e, this.state)}>save</button>
 					<button className="MovieForm__btn MovieForm__btn--cancel" onClick={onClose}>cancel</button>
 				</form>
 			</div>
