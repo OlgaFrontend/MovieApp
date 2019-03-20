@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Header from 'components/Header';
 import MovieList from 'components/MovieList';
 import MovieForm from 'components/MovieForm';
-
 import movies from '../../fakeDataBase';
 import './styles.css';
 
-export default class App extends React.Component {
-	constructor(props) {
-		super(props);
+export default class App extends Component {
+	constructor() {
+		super();
 
 		this.state = {
 			isOpen: false,
@@ -22,8 +21,6 @@ export default class App extends React.Component {
 	}
 
 	openMovieHandler(id) {
-		console.log(id);
-
     this.setState({
       isOpen:true,
       movieToEdit: id,
@@ -39,13 +36,14 @@ export default class App extends React.Component {
 	updateMovie(e, movie) {
 		e.preventDefault();
     const movies = [...this.state.movies];
-    const movieToUpdate = movies.find(m => m.id === movie.id);
-    this.setState({movies:movies, isOpen: false});
+		const movieToUpdate = movies.findIndex(m => m.id === movie.id);
+		movies[movieToUpdate] = movie;
+		this.setState({movies:movies, isOpen: false});
 	}
 
 	render() {
-		const { isOpen, movieToEdit } = this.state;
-		const findEl = this.state.movies.find(movie => movie.id === this.state.movieToEdit)
+		const { movies, isOpen, movieToEdit } = this.state;
+		const findEl = movies.find(movie => movie.id === movieToEdit)
 		const EditForm = isOpen &&
 			<MovieForm
 				isOpen={isOpen}
@@ -60,7 +58,7 @@ export default class App extends React.Component {
 					<Header/>
 					<div className="App__body">
 						<MovieList
-							movies={this.state.movies}
+							movies={movies}
 							editMovie={this.openMovieHandler}
 						/>
 						{EditForm}

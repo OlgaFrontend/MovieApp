@@ -26,4 +26,19 @@ export default [
 		title: 'Training Day',
 		descr: 'Police drama about a veteran officer who escorts a rookie on his first day with the LAPD\'s tough inner-city narcotics unit. "Training Day" is a blistering action drama that asks the audience to decide what is necessary, what is heroic and what crosse...',
 	},
+	{
+		id: v4(),
+		title: 'Conan',
+		descr: 'Orphaned boy Conan (Arnold Schwarzenegger) is enslaved after his village is destroyed by the forces of vicious necromancer Thulsa Doom (James Earl Jones), and is compelled to push "The Wheel of Pain" for many years. Once he reaches adulthood, Conan s...',
+	},
+	{
+		id: v4(),
+		title: 'The House',
+		descr: 'Scott and Kate Johansen must figure out a way to earn some money after their daughter\'s scholarship falls through. When all else fails, the desperate couple join forces with their neighbor Frank to start an underground casino in his home. As the cash...', 
+	},
+	{
+		id: v4(),
+		title: 'Training Day',
+		descr: 'Police drama about a veteran officer who escorts a rookie on his first day with the LAPD\'s tough inner-city narcotics unit. "Training Day" is a blistering action drama that asks the audience to decide what is necessary, what is heroic and what crosse...',
+	},
 ];

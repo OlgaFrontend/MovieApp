@@ -13,5 +13,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://olgafrontend.github.io/FE11/React_HW/build/"
+  "homepage": "https://olgafrontend.github.io/MovieApp/build/"
 }
